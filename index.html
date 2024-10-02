@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora OEE</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Se houver CSS -->
+    <script src="/js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Calculadora de OEE</h1>
+
+    <!-- Formulário de entrada -->
+    <h2>
+        <form id="oee-form">
+            <div class="form-group">
+                <label for="tempoPlanejado">Tempo Planejado em Minutos:</label>
+                <input type="number" id="tempoPlanejado" placeholder="Ex: 480" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tempoOperacao">Tempo Real em Minutos:</label>
+                <input type="number" id="tempoOperacao" placeholder="Ex: 450" required>
+            </div>
+
+            <div class="form-group">
+                <label for="unidadesProduzidas">Unidades Produzidas no Total:</label>
+                <input type="number" id="unidadesProduzidas" placeholder="Ex: 1000" required>
+            </div>
+
+            <div class="form-group">
+                <label for="capacidadeTeorica">Capacidade Teórica do Equipamento:</label>
+                <input type="number" id="capacidadeTeorica" placeholder="Ex: 5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="unidadesBoas">Unidades Boas ou Aprovadas na Qualidade:</label>
+                <input type="number" id="unidadesBoas" placeholder="Ex: 950" required>
+            </div>
+
+            <!-- Botões de ação -->
+            <div class="btn-group" role="group" aria-label="Exemplo Básico">
+                <button type="reset" class="btn btn-secondary" onclick="resetarResultado()">Resetar Valores</button>
+                <button type="button" class="btn btn-secondary" onclick="calcularOEE()">Calcular OEE</button>
+            </div>
+        </form>
+    </h2>
+
+    <!-- Exibir o resultado do OEE -->
+    <div class="resultado-bloco">
+        <label class="resultado-titulo">Resultado do OEE:</label>
+        <div id="caixaResultado" style="width:100%; height: 50px; text-align: center; font-size: 1.5em; border: 1px solid #000;"></div>
+       <div id="mensagemResultado" style="text-align: center;" > </div>
+    </div>
+
+
+</body>
+</html>
