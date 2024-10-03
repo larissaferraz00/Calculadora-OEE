@@ -1,3 +1,4 @@
+/* Estilos Globais */
 * {
     margin: 5px;
     padding: 0;
@@ -10,17 +11,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;  
+    min-height: 100vh;  
     text-align: center;
+    padding: 20px;
+    flex-direction: column; 
 }
 
-
 h1 {
-    position: absolute;
-    top: 0; /* Coloca o título no topo da página */
-    left: 50%; /* Posiciona o título a 50% da largura da página */
-    transform: translateX(-50%); /* Centraliza o texto horizontalmente */
-    margin-top: 50px; /* Espaço entre o topo da página e o título */
+    font-size: 2em;
+    margin-top: 20px;
+    text-align: center;
+    word-wrap: break-word;
+    width: 100%; 
 }
 
 .form-group {
@@ -39,7 +41,9 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    text-align: center;
 }
+
 
 .btn-group {
     display: flex;
@@ -61,45 +65,37 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #5aa16e; 
+    background-color: #4d8c5c; 
 }
 
 #caixaResultado {
-    width: 150px;  /* Largura da caixa */
-    height: 50px;  /* Altura da caixa */
-    background-color: #fff;  /* Cor de fundo */
-    border: 1px solid #ccc;  /* Borda para destacar a caixa */
-    text-align: center;  /* Centralizar o texto dentro da caixa */
-    line-height: 50px;  /* Centralizar verticalmente */
-    font-size: 1.5em;  /* Tamanho da fonte */
-    border-radius: 5px;  /* Bordas arredondadas */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Sombra para destacar a caixa */
-    margin-bottom: 10px;  /* Espaço entre o título e a caixa de resultado */
+    width: 150px;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    display: inline-block;
 }
 
 .resultado-titulo {
-    display: block;  /* Garante que o título ocupe toda a linha */
-    margin-bottom: 0;  /* Remover qualquer margem inferior */
-    font-weight: bold;  /* Deixar o texto em negrito */
-    font-size: 1.2em;  /* Tamanho da fonte */
-    margin-top: 20px;  /* Espaço superior entre outros elementos e o título */
-}
-
-input{
-    text-align: center;
-}
-
-output{
-    text-align: center;
-
+    display: block;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 20px;
 }
 
 #mensagemResultado {
     font-size: 1.2em;
     font-weight: bold;
-    text-align: center; /* Centraliza o texto da avaliação */
-    margin-bottom: 10px;  /* Espaço acima da mensagem */
-    display: block;  /* Garante que a mensagem fique abaixo */
+    text-align: center;
+    margin-bottom: 10px;
+    display: block;
 }
 
 /* Mensagens coloridas */
@@ -112,5 +108,44 @@ output{
 }
 
 .mensagem-satisfatoria {
-    color: yellow;
+    color: orange;
+}
+
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-top: 10px;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+        padding: 10px;
+    }
+
+    #caixaResultado {
+        width: 100%;
+        font-size: 1.2em;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    #mensagemResultado {
+        font-size: 1em;
+    }
 }
